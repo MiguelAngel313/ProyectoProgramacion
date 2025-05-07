@@ -15,6 +15,7 @@ public class Personaje {
     private int nivel;
     private Posicion posicion;
 
+    //Constructor
     public Personaje(String nombre, Posicion posicion){
         this.nombre=nombre;
         this.posicion=posicion;
@@ -25,8 +26,6 @@ public class Personaje {
         this.ataque=10;
         this.defensa=5;
         this.nivel=1;
-        
-
     }
 
     //Getters y Setters
@@ -113,10 +112,6 @@ public class Personaje {
             "}";
     }
 
-  
-
- 
-
-
+    
 
 }

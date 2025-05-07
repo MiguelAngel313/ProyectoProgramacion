@@ -25,6 +25,7 @@ public class Posicion {
         this.y = y;
     }
 
+    //Mostrar datos
     @Override
     public String toString() {
         return "{" +
