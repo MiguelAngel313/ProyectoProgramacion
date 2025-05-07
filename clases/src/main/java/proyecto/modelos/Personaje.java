@@ -1,5 +1,7 @@
 package proyecto.modelos;
 
+import java.util.List;
+
 public class Personaje {
 
     private String nombre;
@@ -96,6 +98,7 @@ public class Personaje {
         this.posicion = posicion;
     }
 
+    //Mostrar los datos
     @Override
     public String toString() {
         return "{" +
@@ -109,6 +112,8 @@ public class Personaje {
             ", nivel='" + getNivel() + "'" +
             "}";
     }
+
+  
 
  
 
