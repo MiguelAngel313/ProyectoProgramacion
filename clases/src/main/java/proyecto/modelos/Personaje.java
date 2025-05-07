@@ -1,5 +1,7 @@
 package proyecto.modelos;
 
+import java.util.List;
+
 public class Personaje {
 
     private String nombre;
@@ -14,6 +16,7 @@ public class Personaje {
     private Posicion posicion;
     private int fuerza; 
 
+    //Constructor
     public Personaje(String nombre, Posicion posicion){
         this.nombre=nombre;
         this.posicion=posicion;
@@ -25,8 +28,6 @@ public class Personaje {
         this.nivel=1;
         this.fuerza=10; 
         this.nivel=1;
-        
-
     }
 
     //Getters y Setters
@@ -106,6 +107,7 @@ public class Personaje {
         this.fuerza = fuerza;
     }
 
+    //Mostrar los datos
     @Override
     public String toString() {
         return "{" +
@@ -120,53 +122,8 @@ public class Personaje {
             "}";
     }
 
-    public String obtenerNombre() {
-        return nombre;
-    }
+ 
 
-    public int obtenerFuerza() {
-        return fuerza;
-    }
 
-    public int obtenerDefensa() {
-        return defensa;
-    }
-
-    public int obtenerVelocidad() {
-        return velocidad;
-    }
-
-    public void recibirDano(int dano) {
-        this.vidaActual -= dano;
-        if (this.vidaActual < 0) {
-            this.vidaActual = 0; 
-        }
-    }
-
-    public boolean estaMuerto() {
-        return this.vidaActual <= 0;
-    }
-
-    public boolean estaVivo() {
-        return this.vidaActual > 0;
-    }
-
-    public void atacar(Personaje objetivo) {
-        int dano = this.ataque - objetivo.defensa;
-        if (dano > 0) {
-            objetivo.recibirDano(dano);
-        } else {
-            System.out.println("El ataque no hace daño debido a la defensa del objetivo.");
-        }
-    }
-
-    public void moverse(int x, int y) {
-        this.posicion.setX(x);
-        this.posicion.setY(y);
-    }
-
-    public void moverse(Posicion nuevaPosicion) {
-        this.posicion = nuevaPosicion;
-    }
 
 }

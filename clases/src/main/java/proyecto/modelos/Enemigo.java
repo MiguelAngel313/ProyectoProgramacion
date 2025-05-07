@@ -17,7 +17,7 @@ public class Enemigo extends Personaje {
         this.tipoEnemigo = tipoEnemigo;
     }
    
-
+    //Mostrar datos
     @Override
     public String toString() {
         return super.toString() + "{" +

@@ -17,6 +17,7 @@ public class Heroe extends Personaje {
         this.experiencia = experiencia;
     }
 
+    //Mostar datos
     @Override
     public String toString() {
         return super.toString()+ "{" +
