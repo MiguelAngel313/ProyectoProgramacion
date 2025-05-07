@@ -1,6 +1,7 @@
 package proyecto.modelos;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class Mapa {
     private Celda[][] celdas;

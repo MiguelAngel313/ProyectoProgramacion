@@ -24,7 +24,10 @@ public class Enemigo extends Personaje {
             " tipoEnemigo='" + getTipoEnemigo() + "'" +
             "}";
     }
-   
 
+    public void moverHacia(Heroe heroe) {
+        System.out.println("El enemigo se mueve hacia el héroe.");
+    }
 
 }
+
