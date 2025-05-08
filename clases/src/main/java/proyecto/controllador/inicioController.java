@@ -1,5 +1,6 @@
 package proyecto.controllador;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -29,12 +30,12 @@ public class inicioController {
     private TextField name;
 
     @FXML
-    void cargarEstadisticasyMapa(ActionEvent event) {
+    void cargarEstadisticasyMapa(ActionEvent event) throws IOException {
         
         String nombre = name.getText();
         int ataque = Integer.parseInt(atack.getText());
         int defensa = Integer.parseInt(defense.getText());
-        
+        App.setRoot("mapa");
     }
 
     @FXML
