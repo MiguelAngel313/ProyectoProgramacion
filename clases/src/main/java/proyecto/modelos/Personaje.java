@@ -1,12 +1,13 @@
 package proyecto.modelos;
 
 import java.util.List;
+import java.util.Objects;
 
 public class Personaje {
 
     private String nombre;
     private int id;
-    private int identificador;
+    private static int identificador =0;
     private int vidaMaxima;
     private int vidaActual;
     private int velocidad;
@@ -122,8 +123,67 @@ public class Personaje {
             "}";
     }
 
+<<<<<<< HEAD
  
 
 
+=======
+    //Métodos
+    //1. Mover. 
+    public void mover(Direccion direccion) {
+        
+        if (direccion == Direccion.ARRIBA) {
+            this.posicion.setY(this.posicion.getY() - 1);
+        } else if (direccion == Direccion.ABAJO) {
+            this.posicion.setY(this.posicion.getY() + 1);
+        } else if (direccion == Direccion.IZQUIERDA) {
+            this.posicion.setX(this.posicion.getX() - 1);
+        } else if (direccion == Direccion.DERECHA) {
+            this.posicion.setX(this.posicion.getX() + 1);
+        }
+    }
+
+    //2. Atacar. Se ejecuta un ataque
+    public void atacar(Personaje objetivo) {
+        int danio = Math.max(0, this.ataque - objetivo.getDefensa());
+        objetivo.recibirDanio(danio);
+    }
+
+    //3. Recibir daño. Se reduce la vida
+    public void recibirDanio(int danio) {
+        this.vidaActual -= danio;
+        if (this.vidaActual < 0) {
+            this.vidaActual = 0;
+        }
+    }
+
+    //4. Tiene vida, esta vivo. Comprueba si el personaje tiene vida.
+    public boolean estaVivo() {
+        return this.vidaActual > 0;
+    }
+
+    //5. Calcular la distancia, la posicion de los personajes
+    public int calcularDistancia(Posicion otra) {
+        return Math.abs(this.posicion.getX() - otra.getX()) + Math.abs(this.posicion.getY() - otra.getY());
+    }
+
+
+    //6. equals y hashcode.
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Personaje)) return false;
+        Personaje personaje = (Personaje) o;
+        return id == personaje.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+
+    
+    
+>>>>>>> Julia
 
 }
