@@ -16,7 +16,7 @@
             <Image url="@Celda.png" />
          </image>
       </ImageView>
-      <Button fx:id="aceptar" defaultButton="true" layoutX="424.0" layoutY="263.0" mnemonicParsing="false" onAction="#cargarEstadisticasyMapa" style="-fx-background-color: green;" text="ACEPTAR" textFill="#848484" />
+      <Button fx:id="aceptar" defaultButton="true" layoutX="424.0" layoutY="263.0" mnemonicParsing="false" onAction="#cargarEstadisticasyMapa" style="-fx-background-color: green;" text="ACEPTAR" textFill="WHITE" />
       <TextField fx:id="name" layoutX="388.0" layoutY="76.0" promptText="Name" style="-fx-background-color: gray;" />
       <TextField fx:id="atack" layoutX="388.0" layoutY="135.0" promptText="Atack" style="-fx-background-color: gray;" />
       <Label layoutX="388.0" layoutY="48.0" text="Nombre:" textFill="WHITE">
