@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
-
+<?import javafx.scene.text.Font?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyecto.mapaController">
    <children>
@@ -12,5 +14,17 @@
             <Image url="@Escenario.png" />
          </image>
       </ImageView>
+      <ProgressBar fx:id="barraSalud" layoutX="32.0" layoutY="380.0" prefHeight="13.0" prefWidth="121.0" progress="1.0" />
+      <ProgressBar fx:id="barraDefensa" layoutX="460.0" layoutY="380.0" prefHeight="13.0" prefWidth="121.0" progress="1.0" />
+      <Label layoutX="32.0" layoutY="363.0" text="Salud" textFill="#34cc34">
+         <font>
+            <Font name="Consolas Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="527.0" layoutY="363.0" text="Defensa" textFill="#35a7cc">
+         <font>
+            <Font name="Consolas Bold" size="14.0" />
+         </font>
+      </Label>
    </children>
 </Pane>
