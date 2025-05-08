@@ -1,5 +1,5 @@
 package proyecto.modelos;
 
 public enum TipoCelda {
-    SUELO, PARED, OBSTACULO
+    SUELO, PARED
 }
