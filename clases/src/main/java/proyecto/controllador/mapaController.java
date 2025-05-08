@@ -1,4 +1,4 @@
-package proyecto;
+package proyecto.controllador;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -21,8 +21,6 @@ public class mapaController {
 
     @FXML
     void initialize() {
-        assert barraDefensa != null : "fx:id=\"barraDefensa\" was not injected: check your FXML file 'mapa.fxml'.";
-        assert barraSalud != null : "fx:id=\"barraSalud\" was not injected: check your FXML file 'mapa.fxml'.";
 
     }
 
