@@ -123,11 +123,6 @@ public class Personaje {
             "}";
     }
 
-<<<<<<< HEAD
- 
-
-
-=======
     //Métodos
     //1. Mover. 
     public void mover(Direccion direccion) {
@@ -184,6 +179,6 @@ public class Personaje {
 
     
     
->>>>>>> Julia
+
 
 }
