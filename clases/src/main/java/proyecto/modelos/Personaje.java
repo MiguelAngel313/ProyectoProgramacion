@@ -166,8 +166,6 @@ public class Personaje {
     public int hashCode() {
         return Objects.hash(id);
     }
-
-    
-    
+  
 
 }
