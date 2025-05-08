@@ -10,6 +10,7 @@ public class Celda {
 
     }
 
+    //Getters and setters
     public boolean isTransitable() {
         return this.transitable;
     }
@@ -30,6 +31,7 @@ public class Celda {
         this.tipoCelda = tipoCelda;
     }
 
+    //Mostrar
     @Override
     public String toString() {
         return "{" +
