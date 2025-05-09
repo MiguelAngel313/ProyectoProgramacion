@@ -1,4 +1,4 @@
-package proyecto;
+package proyecto.controllador;
 
 import java.net.URL;
 import java.util.ResourceBundle;
