@@ -3,11 +3,11 @@ package proyecto.modelos;
 public class Celda {
     private boolean transitable;
     private TipoCelda tipoCelda;
+    private Personaje personaje;
 
     public Celda(boolean transitable, TipoCelda tipoCelda){
         this.transitable=transitable;
         this.tipoCelda=tipoCelda;
-
     }
 
     //Getters and setters
@@ -29,6 +29,18 @@ public class Celda {
 
     public void setTipoCelda(TipoCelda tipoCelda) {
         this.tipoCelda = tipoCelda;
+    }
+
+    public Personaje getPersonaje() {
+        return personaje;
+    }
+
+    public void setPersonaje(Personaje personaje) {
+        this.personaje = personaje;
+    }
+
+    public boolean estaOcupada() {
+        return personaje != null;
     }
 
     //Mostrar

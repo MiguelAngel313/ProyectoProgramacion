@@ -3,7 +3,10 @@ package proyecto.modelos;
 import java.util.List;
 import java.util.Objects;
 
-public class Personaje {
+import interfaces.Observador;
+import interfaces.Observable;
+
+public abstract class Personaje implements Observable {
 
     private String nombre;
     private int id;
@@ -16,6 +19,7 @@ public class Personaje {
     private int nivel;
     private Posicion posicion;
     private int fuerza; 
+    private List<Observador> observadores;
 
     //Constructor
     public Personaje(String nombre, Posicion posicion){
@@ -150,6 +154,7 @@ public class Personaje {
         if (this.vidaActual < 0) {
             this.vidaActual = 0;
         }
+        notificarObservadores();
     }
 
     //4. Tiene vida, esta vivo. Comprueba si el personaje tiene vida.
@@ -158,9 +163,12 @@ public class Personaje {
     }
 
     //5. Calcular la distancia, la posicion de los personajes
-    public int calcularDistancia(Posicion otra) {
-        return Math.abs(this.posicion.getX() - otra.getX()) + Math.abs(this.posicion.getY() - otra.getY());
+    public int calcularDistancia(Personaje otra) {
+        return Math.abs(this.posicion.getX() - otra.getPosicion().getX()) +
+               Math.abs(this.posicion.getY() - otra.getPosicion().getY());
     }
+
+    public abstract void realizarTurno(Mapa mapa);
 
 
     //6. equals y hashcode.
@@ -176,6 +184,23 @@ public class Personaje {
     public int hashCode() {
         return Objects.hash(id);
     }
+
+	@Override
+	public void agregarObservador(Observador o) {
+		observadores.add(o);
+	}
+
+	@Override
+	public void eliminarObservador(Observador o) {
+		observadores.remove(o);
+	}
+
+	@Override
+	public void notificarObservadores() {
+		for (Observador o : observadores) {
+            o.actualizar();
+        }
+	}
 
     
     
