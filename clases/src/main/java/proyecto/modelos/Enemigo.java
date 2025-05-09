@@ -11,6 +11,7 @@ public class Enemigo extends Personaje {
 
     }
 
+    //Getters y setters
     public TipoEnemigo getTipoEnemigo() {
         return this.tipoEnemigo;
     }
@@ -35,10 +36,12 @@ public class Enemigo extends Personaje {
             "}";
     }
 
+    //Mover heroe 
     public void moverHacia(Heroe heroe) {
         System.out.println("El enemigo se mueve hacia el héroe.");
     }
 
+    //Realizar Turno en el mapa.
     @Override
     public void realizarTurno(Mapa mapa){
         Heroe heroe = null;
@@ -77,24 +80,25 @@ public class Enemigo extends Personaje {
                 }
             }
         }else{
-            // Si el héroe no está en la distancia de percepción, el enemigo se mueve aleatoriamente
+            //Si el héroe no está en la distancia de percepción, el enemigo se mueve aleatoriamente
             int direccion = (int) (Math.random() * 4);
             switch (direccion) {
-                case 0: // Arriba
+                case 0: //Arriba
                     nuevaFila--;
                     break;
-                case 1: // Abajo
+                case 1: //Abajo
                     nuevaFila++;
                     break;
-                case 2: // Izquierda
+                case 2: //Izquierda
                     nuevaColumna--;
                     break;
-                case 3: // Derecha
+                case 3: //Derecha
                     nuevaColumna++;
                     break;
             }
         }
 
+    
         Personaje posibleHeroe = mapa.getCelda(nuevaFila, nuevaColumna).getPersonaje();
         if (posibleHeroe instanceof Heroe){
             atacar(posibleHeroe);

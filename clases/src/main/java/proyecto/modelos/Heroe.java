@@ -18,14 +18,6 @@ public class Heroe extends Personaje {
         this.experiencia = experiencia;
     }
 
-    //Mostar datos
-    @Override
-    public String toString() {
-        return super.toString()+ "{" +
-            " experiencia='" + getExperiencia() + "'" +
-            "}";
-    }
-
     public void setDireccion(Direccion direccion) {
         this.direccion = direccion;
     }
@@ -34,6 +26,16 @@ public class Heroe extends Personaje {
         return this.direccion;
     }
 
+    //Mostar datos
+    @Override
+    public String toString() {
+        return super.toString()+ "{" +
+            " experiencia='" + getExperiencia() + "'" +
+            "}";
+    }
+
+    
+    //Realizar turnos en el mapa
     @Override
     public void realizarTurno(Mapa mapa){
         int nuevaX = this.getPosicion().getX();
@@ -64,7 +66,8 @@ public class Heroe extends Personaje {
             mapa.moverPersonaje(this, nuevaPosicion);
         }
 
-        direccion = null; // Resetear la dirección después de realizar el turno
+        // Resetear la dirección después de realizar el turno
+        direccion = null; 
     }
 
 
